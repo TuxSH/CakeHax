@@ -12,6 +12,17 @@ int set_firmware_offsets()
     // Offsets taken from bootstrap
     if (console_type < 6) {
         switch (kernel_version) {
+            case 0x021E1200:  // 2.30-18 2.1.0
+                fw->kernel_patch_address = 0xEFF896D3;
+                fw->reboot_patch_address = 0xEFFA6948;
+                fw->reboot_func_address = 0xFFF745BC;
+                fw->jump_table_address = 0xEFFF4C80;
+                fw->fcram_address = 0xF0000000;
+                fw->func_patch_address = 0xEFF81F4C;
+                fw->func_patch_return = 0xFFF61F54;
+                fw->registers = 0xFFFCE000;
+                break;
+
             case 0x02220000:  // 2.34-0 4.1.0
                 fw->kernel_patch_address = 0xEFF83C97;
                 fw->reboot_patch_address = 0xEFFF497C;

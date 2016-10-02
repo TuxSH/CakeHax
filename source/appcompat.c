@@ -31,6 +31,19 @@ static const struct app_offsets apps[] =
     }
 #elif defined(ENTRY_SPIDER)
     {
+        // 2.1
+        .spec = 0xEB067A41,
+
+        .GSPGPU_FlushDataCache = (void *)0x00345ECC,
+        .nn__gxlow__CTR__CmdReqQueueTx__TryEnqueue = (void *)0x002CE960,
+        .fopen = (void *)0x0025BC00,
+        .fread = (void *)0x002FA864,
+        .fwrite = (void *)0x00310190,
+
+        .GX_SetTextureCopy = (void *)0x002C565C,
+
+        .gpuHandle = (0x003F8418 + 0x58)
+    }, {
         // 4.x
         .spec = 0xEB0676B5,
 
